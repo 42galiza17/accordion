@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  #acc *{
+ 
+      font-family: 'Poppins', sans-serif !important;
+  }
+  #acc button{
+       font-size:16px;
+ color:#363636;
+  }
+  #acc p{
+      font-size:14px;
+    color:#595959;
+  }
+.accordion {
+  background:transparent;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+
+  border:1px solid #D9D9D9;
+  transition: 0.4s;
+
+}
+
+ #acc .accordion:hover {
+
+  border-bottom:1px solid #DD640A;
+}
+ #acc .active{
+      border-bottom:1px solid #DADADA;
+  font-weight:500 !Important;
+  }
+
+#acc .accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+#acc  .active:after {
+  content: "\2212";
+}
+
+#acc .panel {
+  padding: 0 18px;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+ #acc .accordion-container{
+    border-radius:8px;
+        border:1px solid transparent;
+    overflow:hidden;
+      margin:10px 0;
+  }
+</style>
+</head>
+<body id="acc">
+
+  <div class="accordion-container">
+  <button class="accordion">Section 1</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+</div>
+  <div class="accordion-container">
+  <button class="accordion">Section 2</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+</div>
+  
+    <div class="accordion-container">
+  <button class="accordion">Section 3</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+</div>
+
+    
+    <div class="accordion-container">
+  <button class="accordion">Section 4</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+</div>
+
+  
+    
+    <div class="accordion-container">
+  <button class="accordion">Section 5</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+</div>
+
+  
+    
+    <div class="accordion-container">
+  <button class="accordion">Section 6</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+</div>
+
+  
+    
+    <div class="accordion-container">
+  <button class="accordion">Section 7</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+</div>
+
+  
+<script>
+var acc = document.getElementsByClassName("accordion");
+  var accContainer  = document.getElementsByClassName("accordion-container");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var parent = this.parentElement;
+    
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+        parent.style.borderColor = "#D9D9D9";
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+       parent.style.borderColor = "#DD640A";
+    } 
+  
+  });
+}
+</script>
+
+</body>
+</html>
